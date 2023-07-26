@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "io.papermc.paperweight"
-version = "1.0.0-SNAPSHOT"
+version = "1.0.0-DEV"
 description = "Test plugin for paperweight-userdev"
 
 java {
@@ -17,6 +17,11 @@ dependencies {
   paperweight.paperDevBundle("1.20.1-R0.1-SNAPSHOT")
   // paperweight.foliaDevBundle("1.20.1-R0.1-SNAPSHOT")
   // paperweight.devBundle("com.example.paperfork", "1.20.1-R0.1-SNAPSHOT")
+
+
+  implementation("org.projectlombok:lombok:1.18.26")
+  annotationProcessor("org.projectlombok:lombok:1.18.26")
+
 }
 
 tasks {
@@ -49,11 +54,11 @@ tasks {
     }
   }
 
-  /*
+
   reobfJar {
     // This is an example of how you might change the output location for reobfJar. It's recommended not to do this
     // for a variety of reasons, however it's asked frequently enough that an example of how to do it is included here.
-    outputJar.set(layout.buildDirectory.file("libs/PaperweightTestPlugin-${project.version}.jar"))
+    outputJar.set(layout.buildDirectory.file("dist/EnhancedUI-${project.version}.jar"))
   }
-   */
+
 }
