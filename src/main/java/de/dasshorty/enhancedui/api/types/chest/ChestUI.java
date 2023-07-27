@@ -3,8 +3,8 @@ package de.dasshorty.enhancedui.api.types.chest;
 import de.dasshorty.enhancedui.api.UIReference;
 import de.dasshorty.enhancedui.api.UIType;
 import de.dasshorty.enhancedui.api.exception.OutOfInventoryException;
-import de.dasshorty.enhancedui.api.types.chest.front.UIAction;
-import de.dasshorty.enhancedui.api.types.chest.front.UIItem;
+import de.dasshorty.enhancedui.api.UIAction;
+import de.dasshorty.enhancedui.api.UIItem;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -15,14 +15,14 @@ import org.jetbrains.annotations.NotNull;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class UI implements InventoryHolder, UIReference {
+public abstract class ChestUI implements InventoryHolder, UIReference {
 
   protected final Map<UIItem, UIAction> itemsMap = new HashMap<>();
   private final Component uiTitle;
   private final Inventory inventory;
-  private final UIRow rows;
+  protected final ChestUIRow rows;
 
-  public UI(Component uiTitle, UIRow slots, Player opener) {
+  public ChestUI(Component uiTitle, ChestUIRow slots, Player opener) {
     this.uiTitle = uiTitle;
     this.rows = slots;
     this.inventory = Bukkit.createInventory(this, slots.getSlots(), uiTitle);
@@ -40,7 +40,7 @@ public abstract class UI implements InventoryHolder, UIReference {
 
   public void item(UIItem item, UIAction click) throws OutOfInventoryException {
 
-    if (!UIRow.isParentFrom(rows, item.getOriginSlot().getParent()))
+    if (!ChestUIRow.isParentFrom(rows, item.getOriginSlot().getParent()))
       throw new OutOfInventoryException(this, item, rows);
 
     itemsMap.put(item, click);

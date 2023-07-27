@@ -1,4 +1,4 @@
-package de.dasshorty.enhancedui.api.types.chest.front;
+package de.dasshorty.enhancedui.api;
 
 import net.minecraft.world.inventory.ClickAction;
 import org.bukkit.entity.Player;

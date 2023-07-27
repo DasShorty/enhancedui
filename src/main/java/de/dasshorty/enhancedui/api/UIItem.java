@@ -1,4 +1,4 @@
-package de.dasshorty.enhancedui.api.types.chest.front;
+package de.dasshorty.enhancedui.api;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +19,8 @@ public class UIItem {
   private final ItemStack itemStack;
   @Getter
   private final UISlot originSlot;
+  @Getter
+  private UISlot currentSlot;
   @Getter
   private Component displayText;
   @Getter
