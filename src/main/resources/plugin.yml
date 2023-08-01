@@ -1,8 +1,11 @@
 name: $name
 version: $version
-main: io.papermc.paperweight.testplugin.TestPlugin
+main: de.dasshorty.enhancedui.EnhancedUI
 description: $description
 load: STARTUP
 authors:
   - Author
 api-version: "$apiVersion"
+commands:
+  ui:
+
