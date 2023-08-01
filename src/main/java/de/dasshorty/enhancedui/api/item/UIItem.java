@@ -1,5 +1,6 @@
-package de.dasshorty.enhancedui.api;
+package de.dasshorty.enhancedui.api.item;
 
+import de.dasshorty.enhancedui.api.UISlot;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -12,8 +13,6 @@ import java.util.List;
 
 
 @Setter
-@AllArgsConstructor
-@RequiredArgsConstructor
 public class UIItem {
 
   private final ItemStack itemStack;
@@ -26,7 +25,16 @@ public class UIItem {
   @Getter
   private List<Component> displayLore;
 
+  public UIItem(ItemStack itemStack, UISlot originSlot) {
+    this.itemStack = itemStack;
+    this.originSlot = originSlot;
+    this.currentSlot = originSlot;
+  }
+
   public ItemStack buildItem() {
+
+    if (itemStack == null)
+      throw new IllegalStateException("item stack can't be nul!");
 
     ItemMeta meta = itemStack.getItemMeta();
     meta.displayName(displayText);
