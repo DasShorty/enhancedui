@@ -1,6 +1,6 @@
-package de.dasshorty.enhancedui.api.background;
+package de.dasshorty.enhancedui.background;
 
-import de.dasshorty.enhancedui.api.item.UIItem;
+import de.dasshorty.enhancedui.item.UIItem;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
-package de.dasshorty.enhancedui.api.exception;
+package de.dasshorty.enhancedui.exception;
 
-import de.dasshorty.enhancedui.api.item.UIItem;
+import de.dasshorty.enhancedui.item.UIItem;
 
 public class AnimatedUpdateException extends Throwable {
   public AnimatedUpdateException(UIItem item) {

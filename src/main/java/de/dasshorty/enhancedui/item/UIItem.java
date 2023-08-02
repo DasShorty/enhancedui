@@ -1,9 +1,7 @@
-package de.dasshorty.enhancedui.api.item;
+package de.dasshorty.enhancedui.item;
 
-import de.dasshorty.enhancedui.api.UISlot;
-import lombok.AllArgsConstructor;
+import de.dasshorty.enhancedui.UISlot;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import net.kyori.adventure.text.Component;
 import org.bukkit.inventory.ItemStack;

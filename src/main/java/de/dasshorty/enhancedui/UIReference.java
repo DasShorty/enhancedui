@@ -1,4 +1,4 @@
-package de.dasshorty.enhancedui.api;
+package de.dasshorty.enhancedui;
 
 import net.kyori.adventure.text.Component;
 import org.bukkit.entity.Player;

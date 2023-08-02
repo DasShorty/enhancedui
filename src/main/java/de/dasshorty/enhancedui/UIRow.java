@@ -1,4 +1,4 @@
-package de.dasshorty.enhancedui.api;
+package de.dasshorty.enhancedui;
 
 import lombok.Getter;
 

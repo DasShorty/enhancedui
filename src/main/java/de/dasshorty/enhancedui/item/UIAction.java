@@ -1,4 +1,4 @@
-package de.dasshorty.enhancedui.api.item;
+package de.dasshorty.enhancedui.item;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

@@ -1,13 +1,13 @@
-package de.dasshorty.enhancedui.api.types.chest;
+package de.dasshorty.enhancedui.types.chest;
 
-import de.dasshorty.enhancedui.api.UIReference;
-import de.dasshorty.enhancedui.api.UIRow;
-import de.dasshorty.enhancedui.api.UISlot;
-import de.dasshorty.enhancedui.api.UIType;
-import de.dasshorty.enhancedui.api.background.UIBackground;
-import de.dasshorty.enhancedui.api.exception.OutOfInventoryException;
-import de.dasshorty.enhancedui.api.item.UIAction;
-import de.dasshorty.enhancedui.api.item.UIItem;
+import de.dasshorty.enhancedui.UIReference;
+import de.dasshorty.enhancedui.UIRow;
+import de.dasshorty.enhancedui.UISlot;
+import de.dasshorty.enhancedui.UIType;
+import de.dasshorty.enhancedui.background.UIBackground;
+import de.dasshorty.enhancedui.exception.OutOfInventoryException;
+import de.dasshorty.enhancedui.item.UIAction;
+import de.dasshorty.enhancedui.item.UIItem;
 import lombok.Getter;
 import lombok.val;
 import net.kyori.adventure.text.Component;
@@ -76,7 +76,11 @@ public abstract class ChestUI implements InventoryHolder, UIReference {
           case FULL -> {
 
             val uiItem = background.backgroundItems().get(0);
-            item(new UIItem(uiItem.buildItem(), UISlot.fromSlotId(i).get()), (clicker, clickedItem, action) -> true);
+            val itemStack = uiItem.buildItem();
+
+            item(new UIItem(itemStack, UISlot.fromSlotId(i).get()), (clicker, clickedItem, action) -> true);
+
+            inventory.setItem(i, itemStack);
 
           }
           case SELF -> {
@@ -86,7 +90,10 @@ public abstract class ChestUI implements InventoryHolder, UIReference {
               if (i != 0) {
 
                 val uiItem = background.backgroundItems().get(0);
-                item(new UIItem(uiItem.buildItem(), UISlot.fromSlotId(i).get()), (clicker, clickedItem, action) -> true);
+                val itemStack = uiItem.buildItem();
+                item(new UIItem(itemStack, UISlot.fromSlotId(i).get()), (clicker, clickedItem, action) -> true);
+
+                inventory.setItem(i, itemStack);
 
               }
 
