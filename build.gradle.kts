@@ -2,11 +2,12 @@ plugins {
   `java-library`
   id("io.papermc.paperweight.userdev") version "1.5.5"
   id("xyz.jpenilla.run-paper") version "2.1.0" // Adds runServer and runMojangMappedServer tasks for testing
+  id("maven-publish")
 }
 
-group = "io.papermc.paperweight"
-version = "1.0.0-DEV"
-description = "Test plugin for paperweight-userdev"
+val group = "de.dasshorty"
+val artifact = "enhancedui"
+val projectVersion = "1.0.0-DEV"
 
 java {
   // Configure the java toolchain. This allows gradle to auto-provision JDK 17 on systems that only have JDK 8 installed for example.
@@ -15,13 +16,20 @@ java {
 
 dependencies {
   paperweight.paperDevBundle("1.20.1-R0.1-SNAPSHOT")
-  // paperweight.foliaDevBundle("1.20.1-R0.1-SNAPSHOT")
-  // paperweight.devBundle("com.example.paperfork", "1.20.1-R0.1-SNAPSHOT")
-
-
   implementation("org.projectlombok:lombok:1.18.28")
   annotationProcessor("org.projectlombok:lombok:1.18.28")
+}
 
+publishing {
+  publications {
+    create<MavenPublication>("maven-public") {
+      groupId = group
+      artifactId = artifact
+      version = projectVersion
+
+      from(components["java"])
+    }
+  }
 }
 
 tasks {
