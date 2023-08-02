@@ -21,6 +21,15 @@ dependencies {
 }
 
 publishing {
+  repositories {
+    maven {
+      url = uri("https://repo.dasshorty.de/repository/maven-central/")
+      credentials {
+        username = System.getenv("NEXUS_USER")
+        password = System.getenv("NEXUS_PWD")
+      }
+    }
+  }
   publications {
     create<MavenPublication>("maven-public") {
       groupId = group
