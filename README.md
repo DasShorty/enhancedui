@@ -1,7 +1,8 @@
 # EnhancedUI
 ## Setup EnhancedUI
 
-#### VERSION 1.0.0
+#### VERSION ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/de.dasshorty/enhancedui?server=https%3A%2F%2Frepo.dasshorty.de)
+
 
 1. To use this libary you have to add EnhancedUI to your dependencies
 
