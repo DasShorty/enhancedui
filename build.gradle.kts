@@ -7,7 +7,7 @@ plugins {
 
 val group = "de.dasshorty"
 val artifact = "enhancedui"
-val projectVersion = "1.0.0-DEV"
+val projectVersion = "1.0.0"
 
 java {
   // Configure the java toolchain. This allows gradle to auto-provision JDK 17 on systems that only have JDK 8 installed for example.

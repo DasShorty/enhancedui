@@ -1,6 +1,8 @@
 # EnhancedUI
 ## Setup EnhancedUI
 
+#### VERSION 1.0.0
+
 1. To use this libary you have to add EnhancedUI to your dependencies
 
    add the repository host to your repositories
