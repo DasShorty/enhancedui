@@ -30,10 +30,10 @@ public abstract class ChestUI implements InventoryHolder, UIReference {
   private final Inventory inventory;
   private UIBackground background;
 
-  public ChestUI(Component uiTitle, UIRow slots, Player opener) {
+  public ChestUI(Component uiTitle, UIRow rows, Player opener) {
     this.uiTitle = uiTitle;
-    this.rows = slots;
-    this.inventory = Bukkit.createInventory(this, slots.getSlots(), uiTitle);
+    this.rows = rows;
+    this.inventory = Bukkit.createInventory(this, rows.getSlots(), uiTitle);
 
     background = new UIBackground(UIBackground.BackgroundType.NONE, List.of());
 
