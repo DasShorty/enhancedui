@@ -9,8 +9,6 @@ public interface UIReference {
 
   UIType type();
 
-  boolean animated();
-
   /**
    * @return if true items can be moved in other inventories that the player has open
    * */

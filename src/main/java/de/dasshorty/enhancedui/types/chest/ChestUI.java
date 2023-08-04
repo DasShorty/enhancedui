@@ -121,11 +121,6 @@ public abstract class ChestUI implements InventoryHolder, UIReference {
   }
 
   @Override
-  public boolean animated() {
-    return false;
-  }
-
-  @Override
   public @NotNull Inventory getInventory() {
     return inventory;
   }
