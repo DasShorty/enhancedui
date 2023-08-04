@@ -23,7 +23,7 @@ dependencies {
 publishing {
   repositories {
     maven {
-      url = uri("https://repo.dasshorty.de/repository/maven-central/")
+      url = uri("https://repo.dasshorty.de/repository/api/")
       credentials {
         username = System.getenv("NEXUS_USER")
         password = System.getenv("NEXUS_PWD")
@@ -31,7 +31,7 @@ publishing {
     }
   }
   publications {
-    create<MavenPublication>("maven-public") {
+    create<MavenPublication>("api") {
       groupId = group
       artifactId = artifact
       version = projectVersion
