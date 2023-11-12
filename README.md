@@ -1,24 +1,7 @@
 # EnhancedUI
 ## Setup EnhancedUI
 
-#### VERSION ![Sonatype Nexus (Releases)](https://img.shields.io/nexus/r/de.dasshorty/enhancedui?server=https%3A%2F%2Frepo.dasshorty.de)
-
-
-1. To use this libary you have to add EnhancedUI to your dependencies
-
-   add the repository host to your repositories
-   ```gradle
-   repositories {
-     maven("https://repo.dasshorty.de/repository/api/")
-   }
-   ```
-
-   add the dependency to your dependencies
-   ```gradle
-   dependencies {  
-     implementation("de.dasshorty:enhancedui:VERSION")  
-   }
-   ```
+# :warning: Repository is currently not available due of server switch!
 
 2.  Create an instance of `UIHolder.java` in your main class
     ```java
